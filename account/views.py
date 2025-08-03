@@ -9,4 +9,5 @@ def user_login(request):
        if user is not None:
            login(request , user)
            return redirect('/')
-    return render(request , 'account/login.html' ,{})
+       elif request.method == "GET" :
+           return render(request , 'account/login.html' ,{})
