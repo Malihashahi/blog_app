@@ -1,4 +1,4 @@
-#from django.contrib.auth.models import User
+from django.contrib.auth.models import User
 from django.shortcuts import render , redirect
 from django.contrib.auth import authenticate , login , logout
 #view 
@@ -20,6 +20,10 @@ def user_login(request):
 
 
 def user_register(request):
+    if request.user.is_authenticated ==True :
+        return redirect('/')
+
+
     return render(request , "account/register.html" , {})
 
 
