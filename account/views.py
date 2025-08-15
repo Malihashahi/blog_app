@@ -20,9 +20,14 @@ def user_login(request):
 
 
 def user_register(request):
-    if request.user.is_authenticated ==True :
+    if request.user.is_authenticate == True:
         return redirect('/')
-
+    
+    if request.method =="POST":
+         username = request.POST.get('username')
+         email = request.POST.get('email')
+         password1 = request.POST.get('password1')
+         password2 = request.POST.get('password2')
 
     return render(request , "account/register.html" , {})
 
