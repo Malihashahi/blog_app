@@ -20,6 +20,7 @@ def user_login(request):
 
 
 def user_register(request):
+    context = {"errors" : []}
     if request.user.is_authenticate == True:
         return redirect('/')
     
@@ -28,6 +29,7 @@ def user_register(request):
          email = request.POST.get('email')
          password1 = request.POST.get('password1')
          password2 = request.POST.get('password2')
+         User.objects.create(username=username , password =password1 , email =email)
 
     return render(request , "account/register.html" , {})
 
