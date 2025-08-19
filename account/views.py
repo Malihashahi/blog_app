@@ -29,8 +29,20 @@ def user_register(request):
          email = request.POST.get('email')
          password1 = request.POST.get('password1')
          password2 = request.POST.get('password2')
-         User.objects.create(username=username , password =password1 , email =email)
+         if password1 != password2:
+             context['errors'].append('password are not same')
+             return render(request , "account/register.html", context)
+         
+         
+         
+         if User.objects.get(username = username):
+             context['errors'].append('username is exists')
+             return render(request , "account/register.html", context)
+             
 
+         user = User.objects.create(username=username , password =password1 , email =email)
+         login(request , user)
+         return redirect('/')
     return render(request , "account/register.html" , {})
 
 
