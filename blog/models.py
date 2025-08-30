@@ -4,7 +4,7 @@ from django.contrib.auth.models import User
 
 
 class Article(models.Model):
-    author = models.ForeignKey(User ,on_delete=models.CASCADE, )
+    author = models.ForeignKey(User ,on_delete=models.SET_NULL ,null=True , blank=True)
     title = models.CharField(max_length=30)
     body = models.CharField(max_length=608)
     image = models.ImageField(upload_to="image/article")
