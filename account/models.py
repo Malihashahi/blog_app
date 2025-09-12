@@ -7,4 +7,11 @@ class User(models.Model):
 
 
 class Profile(models.Model):
-   uset = models.OneToOneField()
+   user = models.OneToOneField(User , on_delete=models.CASCADE)
+   fathers_name = models.CharField(35)
+   melicode =models.CharField()
+   image = models.ImageField(upload_to="profiles/images")
+
+
+   def __str__(self):
+      return self.user.username
