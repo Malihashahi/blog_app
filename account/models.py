@@ -10,7 +10,7 @@ class Profile(models.Model):
    user = models.OneToOneField(User , on_delete=models.CASCADE)
    fathers_name = models.CharField(35)
    melicode =models.CharField()
-   image = models.ImageField(upload_to="profiles/images")
+   image = models.ImageField(upload_to="profiles/images" , blank= True ,null=True)
 
 
    def __str__(self):
