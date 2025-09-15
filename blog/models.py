@@ -15,7 +15,7 @@ def __str__(self):
 class Article(models.Model):
     author = models.ForeignKey(User ,on_delete=models.SET_NULL ,null=True , blank=True)
     category = models.ManyToManyField(Category)
-    title = models.CharField(max_length=30 , db_column="mytitle" , primary_key=True)
+    title = models.CharField(max_length=30 ,  primary_key=True)
     body = models.CharField(max_length=608)
     image = models.ImageField(upload_to="image/article")
     created = models.DateTimeField(auto_now_add=True , editable=False)
