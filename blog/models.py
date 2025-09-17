@@ -13,6 +13,7 @@ def __str__(self):
 
 
 class Article(models.Model):
+    id = models.BigAutoField()
     author = models.ForeignKey(User ,on_delete=models.SET_NULL ,null=True , blank=True)
     category = models.ManyToManyField(Category)
     title = models.CharField(max_length=30 ,  primary_key=True)
@@ -27,3 +28,10 @@ class Article(models.Model):
 
 def __str__(self):
      return  f"{self.title } - {self.body}"
+
+
+
+
+
+class MyTest(models.Model):
+     title = models.CharField(max_length=34)
