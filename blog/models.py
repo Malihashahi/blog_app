@@ -31,7 +31,3 @@ def __str__(self):
 
 
 
-
-
-class MyTest(models.Model):
-     title = models.CharField(max_length=34)
