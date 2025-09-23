@@ -23,12 +23,17 @@ class Article(models.Model):
     updated = models.DateTimeField(auto_now= True)
     pub_date = models.DateField(default=timezone.now())
     myfile = models.BinaryField(null=True)
-
-
+    is_published = models.BooleanField()
 
 
 def __str__(self):
      return  f"{self.title } - {self.body}"
+ 
+
+
+article = Article.objects.get(id = 15)
+article.is_published = True
+article.save()
 
 
 
