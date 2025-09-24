@@ -31,9 +31,11 @@ def __str__(self):
  
 
 
-article = Article.objects.get(id = 15)
-article.is_published = True
-article.save()
 
 
+class New(models.Model):
+     title = models.CharField(max_length=34)
+     des = models.TextField()
 
+     def __str__(self):
+          return self.title
