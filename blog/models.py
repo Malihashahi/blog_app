@@ -12,6 +12,15 @@ def __str__(self):
 
 
 
+class ArticleManager(models.Manager):
+     def counter(self):
+          return len(self.all)
+
+      
+
+
+
+
 class Article(models.Model):
     id = models.BigAutoField()
     author = models.ForeignKey(User ,on_delete=models.SET_NULL ,null=True , blank=True)
@@ -24,6 +33,7 @@ class Article(models.Model):
     pub_date = models.DateField(default=timezone.now())
     myfile = models.BinaryField(null=True)
     is_published = models.BooleanField()
+    objects = ArticleManager()
 
 
 def __str__(self):
