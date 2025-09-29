@@ -16,7 +16,8 @@ class ArticleManager(models.Manager):
      def counter(self):
           return len(self.all)
 
-      
+     def publisher(self):
+          return self.filter(published = True)
 
 
 
@@ -32,7 +33,7 @@ class Article(models.Model):
     updated = models.DateTimeField(auto_now= True)
     pub_date = models.DateField(default=timezone.now())
     myfile = models.BinaryField(null=True)
-    is_published = models.BooleanField()
+    published = models.BooleanField()
     objects = ArticleManager()
 
 
