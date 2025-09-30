@@ -24,7 +24,7 @@ class ArticleManager(models.Manager):
 
 class Article(models.Model):
     id = models.BigAutoField()
-    author = models.ForeignKey(User ,on_delete=models.SET_NULL ,null=True , blank=True)
+    author = models.ForeignKey(User ,on_delete=models.SET_NULL , blank=True)
     category = models.ManyToManyField(Category)
     title = models.CharField(max_length=30 ,  primary_key=True)
     body = models.CharField(max_length=608)
