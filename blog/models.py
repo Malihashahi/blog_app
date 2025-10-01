@@ -33,8 +33,10 @@ class Article(models.Model):
     updated = models.DateTimeField(auto_now= True)
     pub_date = models.DateField(default=timezone.now())
     myfile = models.BinaryField(null=True)
-    published = models.BooleanField()
+    status = models.BooleanField()
+    published = models.BooleanField(default=True)
     objects = ArticleManager()
+
 
 
 def __str__(self):
