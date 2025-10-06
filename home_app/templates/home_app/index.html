@@ -60,8 +60,8 @@ https://templatemo.com/tm-551-stand-blog
                 <a class="nav-link" href="blog.html">Blog Entries</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="post-details.html">Post Details</a>
-              </li>
+                <a class="nav-link" href="{% url 'blog:article_detail' article.id %}"><h4>{{ article_detial }}</h4></a>
+              </li> 
               <li class="nav-item">
                 <a class="nav-link" href="contact.html">Contact Us</a>
               </li>
