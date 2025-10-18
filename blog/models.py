@@ -37,6 +37,8 @@ class Article(models.Model):
     published = models.BooleanField(default=True)
     objects = ArticleManager()
 
+def get_absolute_url(self):
+     return reversed('blog:article_detail' , args = [self.id])
 
 
 def __str__(self):
