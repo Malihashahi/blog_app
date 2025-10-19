@@ -32,7 +32,7 @@ class Article(models.Model):
     created = models.DateTimeField(auto_now_add=True , editable=False)
     updated = models.DateTimeField(auto_now= True)
     pub_date = models.DateField(default=timezone.now())
-    myfile = models.BinaryField(null=True)
+    myfile = models.BinaryField()
     status = models.BooleanField()
     published = models.BooleanField(default=True)
     objects = ArticleManager()
