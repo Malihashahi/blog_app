@@ -35,7 +35,15 @@ class Article(models.Model):
     myfile = models.BinaryField()
     status = models.BooleanField()
     published = models.BooleanField(default=True)
+    slug = models.SlugField(null=True , unique=True)
     objects = ArticleManager()
+
+    def save(self, force_insert = ..., force_update = ..., using = ..., update_fields = ...):
+         self.slug = self.title
+         return super().save(force_insert, force_update, using, update_fields)
+     
+
+
 
 def get_absolute_url(self):
      return reversed('blog:article_detail' , args = [self.id])
