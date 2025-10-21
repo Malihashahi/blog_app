@@ -6,6 +6,6 @@ from django.urls import reverse
 
 
 def post_detail(request , pk):
-   article =get_object_or_404(Article ,id = pk)
+   article = Article.objects.all()[0:3]
    print(reverse('blog:article_detail', args=[2]))
    return render(request , "blog/article_detail.html" , {'article' : article})
