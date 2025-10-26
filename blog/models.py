@@ -37,6 +37,13 @@ class Article(models.Model):
     published = models.BooleanField(default=True)
     slug = models.SlugField(null=True , unique=True)
     objects = ArticleManager()
+   
+
+   
+
+
+
+
 
     def save(self, force_insert = ..., force_update = ..., using = ..., update_fields = ...):
          self.slug = self.title
