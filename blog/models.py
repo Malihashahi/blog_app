@@ -39,11 +39,10 @@ class Article(models.Model):
     objects = ArticleManager()
    
 
-   
-
-
-
-
+    class Meta:
+         ordaring =('created' , 'updated')
+         
+    
 
     def save(self, force_insert = ..., force_update = ..., using = ..., update_fields = ...):
          self.slug = self.title

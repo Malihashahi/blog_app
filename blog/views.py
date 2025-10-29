@@ -6,7 +6,7 @@ from django.urls import reverse
 
 
 def post_detail(request , pk):
-   article = Article.objects.all()
+   article = Article.objects.all().order_by('-created' , '-updated')
    recent_articles = Article.objects.all()[:3]
   
    return render(request , "blog/article_detail.html" , {'article' : article})
