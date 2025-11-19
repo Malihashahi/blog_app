@@ -5,3 +5,7 @@ def home(request):
     articles = Article.objects.published()
    
     return render(request ,"home_app/index.html", {'articles': articles} )
+
+
+
+
