@@ -9,3 +9,6 @@ def home(request):
 
 
 
+def sidebar(request):
+    context = {'name' : 'malihaShahi'}
+    return render(request , 'includes/sidebar.html' , context)
