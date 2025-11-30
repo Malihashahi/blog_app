@@ -20,7 +20,7 @@ class ArticleManager(models.Manager):
           return self.filter(published = True)
 
 
-
+article.category.all()
 
 class Article(models.Model):
     id = models.BigAutoField()
