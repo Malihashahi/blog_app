@@ -20,12 +20,12 @@ class ArticleManager(models.Manager):
           return self.filter(published = True)
 
 
-article.category.all()
+
 
 class Article(models.Model):
     id = models.BigAutoField()
-    author = models.ForeignKey(User ,on_delete=models.SET_NULL , blank=True)
-    category = models.ManyToManyField(Category)
+    author = models.ForeignKey(User ,on_delete=models.SET_NULL , blank=True , related_name="articles")
+    category = models.ManyToManyField(Category , related_name="articles")
     title = models.CharField(max_length=30 ,  primary_key=True)
     body = models.CharField(max_length=608)
     image = models.ImageField(upload_to="image/article")
