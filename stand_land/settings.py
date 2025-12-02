@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'django_render_partial',
+    'django_social_share',
     #my apps application 
 
     'home_app.apps.HomeAppConfig',

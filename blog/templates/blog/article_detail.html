@@ -1,6 +1,7 @@
 {% extends 'base.html' %}
 
 {% load static %}
+{% social_share %}
 {% block title %}
   article_detail
 {% endblock %}
@@ -81,7 +82,7 @@
                             <ul class="post-share">
                               <li><i class="fa fa-share-alt"></i></li>
                               <li><a href="#">Facebook</a>,</li>
-                              <li><a href="#"> Twitter</a></li>
+                              <li>{% post_to_whatsapp <object_or_url> <link_text> <link_class> %}</li>
                             </ul>
                           </div>
                         </div>
