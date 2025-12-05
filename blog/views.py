@@ -1,7 +1,7 @@
 from django.shortcuts import render , get_object_or_404
 from blog.models import Article ,Category
 from django.urls import reverse
-
+from django.core.paginator import Paginator
 
 
 
