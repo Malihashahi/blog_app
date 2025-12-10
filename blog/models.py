@@ -68,3 +68,10 @@ class New(models.Model):
 
      def __str__(self):
           return self.title
+
+
+
+
+
+class Comment(models.Model):
+     article = models.ForeignKey()
