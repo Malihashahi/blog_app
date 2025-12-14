@@ -62,12 +62,7 @@ def __str__(self):
 
 
 
-class New(models.Model):
-     title = models.CharField(max_length=34)
-     des = models.TextField()
 
-     def __str__(self):
-          return self.title
 
 
 
