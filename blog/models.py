@@ -60,19 +60,11 @@ def __str__(self):
  
 
 
-
-
-
-
-
-
-
-
 class Comment(models.Model):
      article = models.ForeignKey(Article , on_delete=models.CASCADE , related_name='comments')
      User = models.ForeignKey(User ,on_delete=models.CASCADE , related_name='comments')
 
-     parent = models.ForeignKey('self' , on_delete=models.CASCADE , related_name='replies')
+     parent = models.ForeignKey('self' , on_delete=models.CASCADE, null=True , related_name='replies')
 
      body = models.TextField()
      created_at = models.DateTimeField(auto_now_add=True)
