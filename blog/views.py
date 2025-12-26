@@ -26,3 +26,7 @@ def category_deatial(request , pk=None):
    return render(request , "blog/articles_list.html" ,{'article' : articles})
        
 
+
+def search(request):
+   q = request.GET.get('q')
+   articles = Article.objects.filter(title__contains = q)
