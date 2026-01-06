@@ -34,3 +34,18 @@ def search(request):
    paginator = Paginator(articles , 2)
    objects_list = paginator.get_page(page_number)
    return render(request, 'blog/articles_list.html' ,{'articles' : articles})
+
+
+
+
+def contactus(request):
+   if request.methond == 'POST':
+      form = ContactUs(request.POST)
+      if form.is_valid():
+         print(form.cleaned_data['text'])
+         massage = Massage.object()
+         return redirect('home_app:home')
+      
+
+   form  = ContactUsForm()
+   return render(request ,"blog/contact_us.html")
