@@ -39,8 +39,8 @@ def search(request):
 
 
 def contactus(request):
-   if request.methond == 'GET':
-      form = ContactUs(request.GET)
+   if request.methond == 'POST':
+      form = ContactUs(request.POST)
       if form.is_valid():
          print(form.cleaned_data['text'])
          massage = Massage.object()
