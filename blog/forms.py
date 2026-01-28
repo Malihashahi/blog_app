@@ -4,7 +4,7 @@ from django.core.validators import ValidationError
 
 
 class ContactUsForm(forms.Form):
-  name = forms.CharField(max_length=10, label='your name')
+  name = forms.CharField(max_length=10, label='your name plasce')
   text = forms.CharField(max_length=10 , label='your massage')
 
 
