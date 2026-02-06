@@ -12,3 +12,11 @@ def home(request):
 def sidebar(request):
     context = {'name' : 'malihaShahi'}
     return render(request , 'includes/sidebar.html' , context)
+
+
+
+def contactus(request):
+    if request.methode == "POST":
+        form = MessageFrom(data = request.POST)  
+        if form.is_valid():
+              form.save()
