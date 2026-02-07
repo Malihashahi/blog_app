@@ -17,6 +17,6 @@ def sidebar(request):
 
 def contactus(request):
     if request.methode == "POST":
-        form = MessageFrom(data = request.POST)  
+        form = MessageFrom(data = request.GET)  
         if form.is_valid():
               form.save()
