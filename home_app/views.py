@@ -10,7 +10,7 @@ def home(request):
 
 
 def sidebar(request):
-    context = {'name' : 'malihaShahi'}
+    context = {'name' : 'Bahar'}
     return render(request , 'includes/sidebar.html' , context)
 
 
