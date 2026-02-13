@@ -12,4 +12,4 @@ class ContactUsForm(forms.Form):
     name = self.cleaned_data.get('name')
     text = self.cleaned_data.get('text')
     if name == text :
-        raise ValidationError('invalide text')
+        raise ValidationError('invalide name')
